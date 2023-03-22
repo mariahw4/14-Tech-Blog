@@ -1,7 +1,7 @@
 [
-    {
-        "blog_id": 3,
-        "commentTitle": "Needs work",
-        "commentContent": "This blog post is unsupported"
+    {        
+        "comment_content": "This blog post is unsupported",
+        "date_created": "03/22/2023",
+        "blog_id": 3
     }
 ]
