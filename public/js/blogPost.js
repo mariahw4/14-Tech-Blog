@@ -48,5 +48,5 @@ document
   // would need a 3rd document and listeners to run the PUT 
 
 document
-  .querySelector('.blog-list')
+  .querySelector('.delete-blog')
   .addEventListener('click', delButtonHandler);
