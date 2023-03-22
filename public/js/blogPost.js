@@ -24,6 +24,7 @@ const newFormHandler = async (event) => {
 // this is where I could put a PUT to edit the blog if I can figure it out
 
 const delButtonHandler = async (event) => {
+  event.preventDefault();
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
