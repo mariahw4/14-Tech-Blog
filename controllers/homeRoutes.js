@@ -63,7 +63,7 @@ router.get('/home', async (req, res) => {
   }
 });
 
-router.get('/blog/:id', async (req, res) => {
+router.get('/blog/:id', withAuth, async (req, res) => {
   try {
     // Get all blogs and JOIN with user data
     const blogData = await Blog.findOne({
