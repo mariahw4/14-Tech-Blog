@@ -33,7 +33,7 @@
         <h4><a href="/blog/{{blog.id}}">{{blog.title}}</a> created {{format_date blog.date_created}}</h4>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{blog.id}}">DELETE</button>
+        <button class="btn btn-sm btn-danger delete-blog" data-id="{{blog.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
