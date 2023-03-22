@@ -36,7 +36,8 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/dashboard');
+      // if successful, redirect the broswer to the home page
+      document.location.replace('/');
     } else {
       alert(response.statusText);
     }
