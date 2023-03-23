@@ -99,41 +99,6 @@ router.get('/blog/:id', withAuth, async (req, res) => {
   }
 });
 
-// router.get('/comments', withAuth, async (req, res) => {
-//   try {
-//     const commentData = await Blog.findOne({
-//       where: {
-//         id: req.params.id
-//       },
-//       attributes: ['id', 'title', 'content', 'date_created'],
-
-//       include: [
-//         {
-//           model: Comment,
-//           attributes: ['id', 'comment_content', 'blog_id', 'user_id'],
-//           include: {
-//             model: User,
-//             attributes: ['username']
-//             }
-//         },
-//         {
-//           model: User,
-//           attributes: ['username'],
-//         },
-//       ],
-//     });
-
-//     const comment = commentData.get({ plain: true });
-
-//     res.render('comment', {
-//       ...comment,
-//       loggedIn: req.session.loggedIn
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.loggedIn) {
