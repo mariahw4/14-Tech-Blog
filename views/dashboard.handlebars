@@ -23,8 +23,9 @@
     </form>
   </div>
 
-  {{#if blogs.length}}
   <div class="col-md-6 blog-list">
+  {{#if blogs.length}}
+
     <h3>Your Current Blogs:</h3>
 
     {{#each blogs as |blog|}}
@@ -34,6 +35,7 @@
       </div>
       <div class="col-md-4">
         <button class="btn btn-sm btn-danger delete-blog" data-id="{{blog.id}}">DELETE</button>
+        <button class="btn btn-sm btn-info blog-update" data-id-one="{{blog.id}}">UPDATE</button>
       </div>
     </div>
     {{/each}}
@@ -41,4 +43,4 @@
   {{/if}}
 </div>
 
-<script src="./js/blogPost.js"></script>
+<script src="/js/blogPost.js"></script>

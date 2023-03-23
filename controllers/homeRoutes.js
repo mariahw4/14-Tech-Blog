@@ -42,17 +42,28 @@ router.get('/home', async (req, res) => {
   try {
     // Get all blogs and JOIN with user data
     const blogData = await Blog.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['username'],
-        },
-      ],
-    });
+      attributes: ['id', 'title', 'content', 'date_created'],
+          
+          include: [{
+                  model: User,
+                  attributes: [
+                      'username',
+                  ]
+              },
 
+              {
+                  model: Comment,
+                  attributes: ['id', 'comment_content', 'blog_id', 'user_id'],
+                  include: {
+                      model: User,
+                      attributes: ['username']
+                  }
+              },
+          ]
+        })
     // Serialize data so the template can read it
     const blogs = blogData.map((blog) => blog.get({ plain: true }));
-
+  
     // Pass serialized data and session flag into template
     res.render('homepage', { 
       blogs, 

@@ -25,6 +25,7 @@ router.get('/', async (req, res) => {
               },
           ]
         })
+      
           if (!blogData) {
             res.status(404).json({ message: 'No blog found with this id!' });
             return;
@@ -85,6 +86,42 @@ router.post('/', withAuth, async (req, res) => {
     res.status(400).json(err);
   }
 });
+
+router.put('/:id', async (req, res) => {
+  try {
+  const blogData = await Blog.findOne({
+          where: {
+            id: req.params.id
+          },
+          attributes: ['id', 'title', 'content', 'date_created'],
+          
+          include: [{
+                  model: User,
+                  attributes: [
+                      'username',
+                  ]
+              },
+
+              {
+                  model: Comment,
+                  attributes: ['id', 'comment_content', 'blog_id', 'user_id'],
+                  include: {
+                      model: User,
+                      attributes: ['username']
+                  }
+              },
+          ]
+        })
+          if (!blogData) {
+            res.status(404).json({ message: 'No blog found with this id!' });
+            return;
+          }
+      
+          res.status(200).json(blogData);
+        } catch (err) {
+          res.status(500).json(err);
+        }
+      });
 
 router.delete('/:id', withAuth, async (req, res) => {
   try {
