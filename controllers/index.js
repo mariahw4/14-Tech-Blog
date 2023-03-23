@@ -8,6 +8,6 @@ const commentRoutes = require('./commentRoutes')
 router.use('/', homeRoutes);
 router.use('/api', apiRoutes);
 router.use('/dashboard', dashboardRoutes);
-router.use('./', commentRoutes);
+router.use('/', commentRoutes);
 
 module.exports = router;
