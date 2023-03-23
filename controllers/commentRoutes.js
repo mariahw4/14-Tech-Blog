@@ -19,6 +19,22 @@ router.post('/', withAuth, async (req, res) => {
 
   module.exports = router;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 // router.get('/comments', withAuth, async (req, res) => {
 //     try {
 //       const commentData = await Blog.findOne({
