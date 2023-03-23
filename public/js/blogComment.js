@@ -1,14 +1,15 @@
 const commentFormHandler = async (event) => {
     event.preventDefault();
   
-    // const commentTitle = document.querySelector('#comment-title').value.trim();
     const comment_content = document.querySelector('#comment-content').value.trim();
     const blog_id = window.location.toString().split('/')[window.location.toString().split('/').length - 1];
+    // const user_id = req.session.user_id;
+    // const date_created = req.session.date_created;
   
     if (comment_content) {
       const response = await fetch(`/api/comments`, {
         method: 'POST',
-        body: JSON.stringify({ blog_id, comment_content }),
+        body: JSON.stringify({ comment_content, blog_id, }),
         headers: {
           'Content-Type': 'application/json',
         },
