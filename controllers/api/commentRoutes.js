@@ -1,16 +1,40 @@
-// const router = require('express').Router();
-// const { Comment } = require('../../models');
-// const withAuth = require('../../utils/auth');
+const router = require('express').Router();
+const { Comment } = require('../../models');
+const withAuth = require('../../utils/auth');
 
-// router.get('/', async (req, res) => {
-//   try {
-//   const commentData = await Comment.findAll({  })
+router.get('/', async (req, res) => {
+  try {
+  const commentData = await Comment.findAll({  })
 
-// res.status(200).json(commentData);
-//   } catch(err) {
-//     res.status(400).json(err);
-//   }
-// });
+res.status(200).json(commentData);
+  } catch(err) {
+    res.status(400).json(err);
+  }
+});
+
+module.exports = router;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // router.get('/:id', async (req, res) => {
 //   try {
@@ -57,4 +81,4 @@
 // }
 // });
 
-// module.exports = router;
+
