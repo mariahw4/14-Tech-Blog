@@ -99,7 +99,7 @@ router.get('/blog/:id', withAuth, async (req, res) => {
   }
 });
 
-router.get('/blogs-comments', withAuth, async (req, res) => {
+router.get('/comments', withAuth, async (req, res) => {
   try {
     const commentData = await Blog.findOne({
       where: {
