@@ -22,30 +22,30 @@ const newFormHandler = async (event) => {
 };
 
 
-const updateButtonHandler = async (event) => {
-  event.preventDefault();
-  if (event.target.hasAttribute('data-id-one')) {
-    const id = event.target.getAttribute('data-id-one');
+// const updateButtonHandler = async (event) => {
+//   event.preventDefault();
+//   if (event.target.hasAttribute('data-id-one')) {
+//     const id = event.target.getAttribute('data-id-one');
 
-    const response = await fetch(`/api/blogs/${id}`, {
-      method: 'PUT',
-      body: JSON.stringify({
-        blog_id: id,
-        // title,
-        // content
-      }),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
+//     const response = await fetch(`/api/blogs/${id}`, {
+//       method: 'PUT',
+//       body: JSON.stringify({
+//         blog_id: id,
+//         // title,
+//         // content
+//       }),
+//       headers: {
+//         'Content-Type': 'application/json'
+//       }
+//     });
 
-    if (response.ok) {
-      document.location.replace('/dashboard');
-    } else {
-      alert('Failed to update blog');
-    }
-  }
-};
+//     if (response.ok) {
+//       document.location.replace('/dashboard');
+//     } else {
+//       alert('Failed to update blog');
+//     }
+//   }
+// };
 
 
 const delButtonHandler = async (event) => {
@@ -71,9 +71,9 @@ document
   .addEventListener('submit', newFormHandler);
 
   // would need a 3rd document and listeners to run the PUT 
-document
-.querySelector('.blog-update')
-.addEventListener('click', updateButtonHandler); 
+// document
+// .querySelector('.blog-update')
+// .addEventListener('click', updateButtonHandler); 
 
 document
   .querySelector('.delete-blog')
